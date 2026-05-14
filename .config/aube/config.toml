@@ -1,0 +1,6 @@
+# effect@4.0.0-beta.65 is pulled by @opencode-ai/plugin@1.14.50.
+# Verified on 2026-05-14: npm provenance attests the package was built by
+# GitHub Actions in Effect-TS/effect-smol via .github/workflows/release.yml
+# on refs/heads/main at commit e6917a2c17cfa5a965d844dfa1aab2e93469ad2d.
+trustPolicyExclude = ["effect@4.0.0-beta.65"]
+trustPolicyIgnoreAfter = 10080

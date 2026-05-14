@@ -1,0 +1,35 @@
+[tools]
+"github:crate-ci/committed" = "latest"
+dprint = "latest"
+fnox = "latest"
+gitleaks = "latest"
+lefthook = "latest"
+pitchfork = "latest"
+aube = "latest"
+
+[hooks]
+postinstall = "lefthook install"
+
+[tasks.fmt]
+description = "Formats all supported files"
+run = "dprint fmt"
+
+[tasks.fmt-check]
+description = "Checks formatting and fails on differences"
+run = "dprint check"
+
+[tasks.install]
+description = "Installs JavaScript dependencies"
+run = "aube install"
+
+[tasks.test]
+description = "Runs unit tests"
+run = "aube run test"
+
+[tasks.typecheck]
+description = "Runs TypeScript type checks"
+run = "aube run typecheck"
+
+[tasks.build]
+description = "Builds the plugin package"
+run = "aube run build"
