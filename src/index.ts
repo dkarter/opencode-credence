@@ -1,8 +1,5 @@
 import type { Plugin } from "@opencode-ai/plugin";
-import { CredenceRunner, defaultOptions, extractEditedPaths, filterElixirPaths } from "./runner.js";
-
-export type { CredenceOptions } from "./runner.js";
-export { CredenceRunner, extractEditedPaths, filterElixirPaths };
+import { CredenceRunner, defaultOptions } from "./runner.js";
 
 const CredencePlugin = (async ({ $, client, worktree, directory }, options) => {
   const runner = new CredenceRunner({
@@ -25,5 +22,4 @@ const CredencePlugin = (async ({ $, client, worktree, directory }, options) => {
   };
 }) satisfies Plugin;
 
-export { CredencePlugin };
 export default CredencePlugin;

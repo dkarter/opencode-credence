@@ -40,5 +40,5 @@ jobs:
       - name: Typecheck
         run: mise run typecheck
 
-      - name: Build
+      - name: Compile
         run: mise run build

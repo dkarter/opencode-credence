@@ -14,11 +14,22 @@
   "files": [
     "dist"
   ],
+  "scripts": {
+    "compile": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
   "keywords": [
     "opencode",
     "plugin",
     "credence",
     "elixir"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@opencode-ai/plugin": "1.14.50",
+    "@types/node": "latest",
+    "typescript": "latest",
+    "vitest": "latest"
+  }
 }

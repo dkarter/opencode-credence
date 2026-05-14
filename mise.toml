@@ -32,4 +32,4 @@ run = "aube run typecheck"
 
 [tasks.build]
 description = "Builds the plugin package"
-run = "aube run build"
+run = "aube run compile"
