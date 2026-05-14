@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+
+      - name: Install mise
+        run: |
+          curl https://mise.run | sh
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Install tools
+        run: |
+          mise trust --yes
+          mise install
+
+      - name: Install dependencies
+        run: mise run install
+
+      - name: Check formatting
+        run: mise run fmt-check
+
+      - name: Run tests
+        run: mise run test
+
+      - name: Typecheck
+        run: mise run typecheck
+
+      - name: Build
+        run: mise run build

@@ -28,9 +28,49 @@ Then fetch deps:
 mix deps.get
 ```
 
+## Install from GitHub
+
+The package is not published to npm yet. For now, install it straight from GitHub in your opencode config:
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": ["github:dkarter/opencode-credence"]
+}
+```
+
+With options:
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": [
+    [
+      "github:dkarter/opencode-credence",
+      {
+        "semantic": false,
+        "maxFiles": 25,
+        "exclude": ["deps/", "_build/", "priv/repo/migrations/"]
+      }
+    ]
+  ]
+}
+```
+
+If you want a repeatable setup, pin the plugin to a tag or commit:
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": ["github:dkarter/opencode-credence#main"]
+}
+```
+
+`#main` tracks the latest code. Replace it with a release tag or commit SHA when you want stable installs.
+
 ## Install from npm
 
-After the package is published, add it to your opencode config:
+If this gets published to npm later, the config should look like this:
 
 ```json
 {
